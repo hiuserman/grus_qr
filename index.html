@@ -36,6 +36,12 @@ _ : )
     const speed = 40; // 文字の表示速度
 
     function type() {
+      const pausePoint = message.indexOf(">>> ID");
+      if (i === pausePoint) {
+        setTimeout(type, 3000); //3s止めてみる
+        return;
+      }
+      
       if (i < message.length) {
         document.getElementById("text").textContent += message.charAt(i);
         i++;
