@@ -37,11 +37,10 @@ let i = 0;
 function type() {
       const pause = message.indexOf(">>> ID");
       const slow = message.indexOf("…もしかして");
-      const slowSpeed = 100;
+      const slowSpeed = 200;
       const normalSpeed = 40;
 
       if (i === pause) {
-        document.getElementById("text").textContent += message.charAt(i);
         i++;
         setTimeout(type, 3000); 
         return;
