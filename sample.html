@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>社員証認証中...</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      font-size: 1.2em;
+      white-space: pre-wrap;
+      padding: 20px;
+    }
+    #text {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div>
+
+  <script>
+    const message = `
+>>> 社員証認証中...
+>>> ID: GRUS-314
+>>> エラー：対象は仮想存在です
+
+この社員は現実には存在しません。
+…もしかして、あなたも？
+
+_ : )
+    `.trim();
+
+    let i = 0;
+    const speed = 40; // 文字の表示速度
+
+    function type() {
+      if (i < message.length) {
+        document.getElementById("text").textContent += message.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    window.onload = type;
+  </script>
+</body>
+</html>
